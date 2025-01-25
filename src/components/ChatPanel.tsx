@@ -115,7 +115,6 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
           state.mode === "browse" ? "hidden" : ""
         }`}
         style={{ maxHeight: 500 }}
-        style={{ maxHeight: 500 }}
         ref={chatContainerRef}
       >
         {cleanMessages.map((message) => (
@@ -193,6 +192,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         input={input}
         setInput={setInput}
         onSubmit={handleSubmit}
+        showQuickActions={state.messages.length <= 1}
         onImageUpload={onImageUpload}
         placeholder={placeholder}
         isLoading={isLoading}
