@@ -221,7 +221,7 @@ export const DunkinOrderApp: React.FC = () => {
                 content: prompt,
               },
             ],
-            max_tokens: 2000, // Adjust based on your needs
+            max_tokens: 500, // Adjust based on your needs
           },
           {
             headers: {

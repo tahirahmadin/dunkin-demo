@@ -15,13 +15,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [145, 202],
-    similarItems: [2, 3]
   },
   {
     id: 2,
@@ -37,13 +32,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Group",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 6,
-    recommendedPairing: [147, 184],
-    similarItems: [1, 3]
   },
   {
     id: 3,
@@ -59,13 +49,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [145, 202],
-    similarItems: [1, 2]
   },
   {
     id: 4,
@@ -81,13 +66,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Group",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 6,
-    recommendedPairing: [148, 203],
-    similarItems: [2, 3]
   },
   {
     id: 5,
@@ -103,13 +83,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Small Group",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [149, 202],
-    similarItems: [1, 4]
   },
   {
     id: 6,
@@ -125,13 +100,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [146, 203],
-    similarItems: [5, 3]
   },
   {
     id: 7,
@@ -147,13 +117,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [150, 202],
-    similarItems: [5, 6]
   },
   {
     id: 8,
@@ -169,13 +134,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [151, 202],
-    similarItems: [6, 7]
   },
   {
     id: 9,
@@ -191,13 +151,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [1, 5],
-    similarItems: [10, 11]
   },
   {
     id: 10,
@@ -213,13 +168,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [9, 11],
-    similarItems: [7, 8]
   },
   {
     id: 11,
@@ -235,13 +185,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [1, 10],
-    similarItems: [9, 12]
   },
   {
     id: 12,
@@ -257,13 +202,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [11, 15],
-    similarItems: [13, 14]
   },
   {
     id: 13,
@@ -279,13 +219,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [12, 15],
-    similarItems: [12, 14]
   },
   {
     id: 14,
@@ -301,13 +236,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [13, 15],
-    similarItems: [12, 13]
   },
   {
     id: 15,
@@ -323,13 +253,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 5,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [14, 11],
-    similarItems: [12, 13]
   },
   {
     id: 16,
@@ -345,13 +270,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [2, 5],
-    similarItems: [17, 18]
   },
   {
     id: 17,
@@ -367,13 +287,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [16, 5],
-    similarItems: [18, 19]
   },
   {
     id: 18,
@@ -389,13 +304,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [17, 1],
-    similarItems: [16, 19]
   },
   {
     id: 19,
@@ -411,13 +321,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [17, 9],
-    similarItems: [16, 18]
   },
   {
     id: 20,
@@ -433,13 +338,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 5,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [19, 10],
-    similarItems: [16, 17]
   },
   {
     id: 21,
@@ -455,13 +355,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [20, 11],
-    similarItems: [18, 19]
   },
   {
     id: 22,
@@ -477,13 +372,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [1, 11],
-    similarItems: [21, 23]
   },
   {
     id: 23,
@@ -499,13 +389,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 9],
-    similarItems: [21, 20]
   },
   {
     id: 24,
@@ -521,13 +406,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [23, 10],
-    similarItems: [19, 22]
   },
   {
     id: 25,
@@ -543,13 +423,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [23, 22],
-    similarItems: [24, 19]
   },
   {
     id: 26,
@@ -565,13 +440,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [12, 15],
-    similarItems: [25, 27]
   },
   {
     id: 27,
@@ -587,13 +457,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [26, 1],
-    similarItems: [19, 25]
   },
   {
     id: 28,
@@ -609,13 +474,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [27, 11],
-    similarItems: [24, 23]
   },
   {
     id: 29,
@@ -631,13 +491,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [27, 11],
-    similarItems: [28, 30]
   },
   {
     id: 30,
@@ -653,13 +508,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [1, 22],
-    similarItems: [29, 31]
   },
   {
     id: 31,
@@ -675,13 +525,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [27, 22],
-    similarItems: [30, 32]
   },
   {
     id: 32,
@@ -697,13 +542,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [1, 28],
-    similarItems: [31, 33]
   },
   {
     id: 33,
@@ -719,13 +559,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [22, 31],
-    similarItems: [32, 34]
   },
   {
     id: 34,
@@ -741,13 +576,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [33, 30],
-    similarItems: [31, 35]
   },
   {
     id: 35,
@@ -763,13 +593,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [34, 11],
-    similarItems: [36, 33]
   },
   {
     id: 36,
@@ -785,13 +610,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [35, 11],
-    similarItems: [37, 34]
   },
   {
     id: 37,
@@ -807,13 +627,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [36, 28],
-    similarItems: [33, 38]
   },
   {
     id: 38,
@@ -829,13 +644,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: false,
-    servingSize: "Single",
-    preparationTime: 3,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [37, 11],
-    similarItems: [36, 39]
   },
   {
     id: 39,
@@ -851,13 +661,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [11, 27],
-    similarItems: [40, 41]
   },
   {
     id: 40,
@@ -873,13 +678,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [28, 35],
-    similarItems: [39, 41]
   },
   {
     id: 41,
@@ -895,13 +695,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 4,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [1, 30],
-    similarItems: [39, 40]
   },
   {
     id: 42,
@@ -917,13 +712,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 33],
-    similarItems: [43, 44]
   },
   {
     id: 43,
@@ -939,13 +729,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 31],
-    similarItems: [42, 44]
   },
   {
     id: 44,
@@ -961,13 +746,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [21, 35],
-    similarItems: [42, 43]
   },
   {
     id: 45,
@@ -983,13 +763,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [23, 34],
-    similarItems: [46, 47]
   },
   {
     id: 46,
@@ -1005,13 +780,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [24, 33],
-    similarItems: [45, 47]
   },
   {
     id: 47,
@@ -1027,13 +797,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 31],
-    similarItems: [45, 46]
   },
   {
     id: 48,
@@ -1049,13 +814,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [47, 33],
-    similarItems: [45, 49]
   },
   {
     id: 49,
@@ -1071,13 +831,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [48, 46],
-    similarItems: [47, 50]
   },
   {
     id: 50,
@@ -1093,13 +848,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [47, 45],
-    similarItems: [49, 51]
   },
   {
     id: 51,
@@ -1115,13 +865,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 15,
     caffeineLevel: "None",
-    sufficientFor: 6,
-    recommendedPairing: [1, 22],
-    similarItems: [52, 53]
+    sufficientFor: 1,
   },
   {
     id: 52,
@@ -1137,13 +882,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 15,
     caffeineLevel: "None",
     sufficientFor: 6,
-    recommendedPairing: [51, 22],
-    similarItems: [53, 54]
   },
   {
     id: 53,
@@ -1159,13 +899,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 15,
     caffeineLevel: "None",
     sufficientFor: 6,
-    recommendedPairing: [52, 1],
-    similarItems: [51, 54]
   },
   {
     id: 54,
@@ -1181,13 +916,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Extra Large",
-    preparationTime: 20,
     caffeineLevel: "None",
     sufficientFor: 12,
-    recommendedPairing: [53, 1],
-    similarItems: [55, 56]
   },
   {
     id: 55,
@@ -1203,13 +933,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Large",
-    preparationTime: 15,
     caffeineLevel: "None",
     sufficientFor: 6,
-    recommendedPairing: [22, 1],
-    similarItems: [54, 56]
   },
   {
     id: 56,
@@ -1225,13 +950,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 10,
     caffeineLevel: "None",
-    sufficientFor: 3,
-    recommendedPairing: [1, 22],
-    similarItems: [55, 57]
+    sufficientFor: 1,
   },
   {
     id: 57,
@@ -1247,13 +967,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Large",
-    preparationTime: 15,
     caffeineLevel: "None",
     sufficientFor: 6,
-    recommendedPairing: [56, 22],
-    similarItems: [58, 55]
   },
   {
     id: 58,
@@ -1269,13 +984,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 3,
-    recommendedPairing: [57, 1],
-    similarItems: [55, 59]
   },
   {
     id: 59,
@@ -1291,13 +1001,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [58, 22],
-    similarItems: [57, 60]
   },
   {
     id: 60,
@@ -1313,13 +1018,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Large",
-    preparationTime: 12,
     caffeineLevel: "Medium",
     sufficientFor: 4,
-    recommendedPairing: [59, 23],
-    similarItems: [61, 57]
   },
   {
     id: 61,
@@ -1335,13 +1035,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Extra Large",
-    preparationTime: 20,
     caffeineLevel: "None",
-    sufficientFor: 6,
-    recommendedPairing: [60, 1],
-    similarItems: [62, 63]
+    sufficientFor: 1,
   },
   {
     id: 62,
@@ -1357,13 +1052,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Extra Large",
-    preparationTime: 25,
     caffeineLevel: "High",
     sufficientFor: 8,
-    recommendedPairing: [61, 23],
-    similarItems: [60, 63]
   },
   {
     id: 63,
@@ -1379,13 +1069,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 10,
     caffeineLevel: "High",
     sufficientFor: 4,
-    recommendedPairing: [23, 22],
-    similarItems: [62, 64]
   },
   {
     id: 64,
@@ -1401,13 +1086,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Extra Large",
-    preparationTime: 20,
     caffeineLevel: "High",
-    sufficientFor: 10,
-    recommendedPairing: [62, 1],
-    similarItems: [63, 65]
+    sufficientFor: 1,
   },
   {
     id: 65,
@@ -1423,13 +1103,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 8,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [59, 23],
-    similarItems: [64, 60]
   },
   {
     id: 66,
@@ -1445,13 +1120,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [1, 22],
-    similarItems: [65, 59]
   },
   {
     id: 67,
@@ -1467,13 +1137,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 3,
-    recommendedPairing: [65, 22],
-    similarItems: [66, 68]
   },
   {
     id: 68,
@@ -1489,13 +1154,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [67, 23],
-    similarItems: [69, 70]
   },
   {
     id: 69,
@@ -1511,13 +1171,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [68, 1],
-    similarItems: [70, 71]
   },
   {
     id: 70,
@@ -1533,13 +1188,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 5,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [69, 22],
-    similarItems: [68, 71]
   },
   {
     id: 71,
@@ -1555,13 +1205,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [70, 23],
-    similarItems: [69, 72]
   },
   {
     id: 72,
@@ -1577,13 +1222,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [71, 1],
-    similarItems: [73, 69]
   },
   {
     id: 73,
@@ -1599,13 +1239,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [72, 1],
-    similarItems: [71, 74]
   },
   {
     id: 74,
@@ -1621,13 +1256,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [23, 22],
-    similarItems: [73, 75]
   },
   {
     id: 75,
@@ -1643,13 +1273,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [74, 22],
-    similarItems: [72, 76]
   },
   {
     id: 76,
@@ -1665,13 +1290,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [75, 1],
-    similarItems: [72, 77]
   },
   {
     id: 77,
@@ -1687,13 +1307,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [68, 22],
-    similarItems: [78, 69]
   },
   {
     id: 78,
@@ -1709,13 +1324,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [75, 23],
-    similarItems: [77, 79]
   },
   {
     id: 79,
@@ -1731,13 +1341,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [78, 22],
-    similarItems: [80, 76]
   },
   {
     id: 80,
@@ -1753,13 +1358,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "Medium",
     sufficientFor: 1,
-    recommendedPairing: [79, 23],
-    similarItems: [78, 81]
   },
   {
     id: 81,
@@ -1775,13 +1375,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [22, 23],
-    similarItems: [82, 80]
   },
   {
     id: 82,
@@ -1797,20 +1392,15 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [81, 22],
-    similarItems: [83, 80]
   },
   {
     id: 83,
     name: "Blue Lagoon Refresher",
     description: "Refreshing blue lagoon drink.",
     category: "Cold Beverage",
-    
+
     price: "20.00",
     currency: "AED",
     restaurant: "Dunkin Donut",
@@ -1820,13 +1410,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [22, 81],
-    similarItems: [84, 82]
   },
   {
     id: 84,
@@ -1842,13 +1427,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [22, 83],
-    similarItems: [81, 82]
   },
   {
     id: 85,
@@ -1864,13 +1444,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegan"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "Low",
     sufficientFor: 1,
-    recommendedPairing: [22, 84],
-    similarItems: [82, 83]
   },
   {
     id: 86,
@@ -1886,13 +1461,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 87],
-    similarItems: [87, 88]
   },
   {
     id: 87,
@@ -1908,13 +1478,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [86, 22],
-    similarItems: [88, 89]
   },
   {
     id: 88,
@@ -1930,13 +1495,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [87, 22],
-    similarItems: [89, 90]
   },
   {
     id: 89,
@@ -1952,13 +1512,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [88, 22],
-    similarItems: [90, 91]
   },
   {
     id: 90,
@@ -1974,13 +1529,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [89, 22],
-    similarItems: [91, 88]
   },
   {
     id: 91,
@@ -1996,13 +1546,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [90, 22],
-    similarItems: [92, 89]
   },
   {
     id: 92,
@@ -2018,13 +1563,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [91, 22],
-    similarItems: [90, 93]
   },
   {
     id: 93,
@@ -2040,13 +1580,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [92, 22],
-    similarItems: [91, 94]
   },
   {
     id: 94,
@@ -2062,13 +1597,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [93, 22],
-    similarItems: [92, 95]
   },
   {
     id: 95,
@@ -2084,13 +1614,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 94],
-    similarItems: [93, 96]
   },
   {
     id: 96,
@@ -2106,13 +1631,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 97],
-    similarItems: [95, 97]
   },
   {
     id: 97,
@@ -2128,13 +1648,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [96, 22],
-    similarItems: [98, 95]
   },
   {
     id: 98,
@@ -2150,13 +1665,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 97],
-    similarItems: [96, 99]
   },
   {
     id: 99,
@@ -2172,18 +1682,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 5,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 98],
-    similarItems: [100, 97]
   },
   {
     id: 100,
     name: "Chicken Tikka Sourdough",
-    description: "A freshly made chicken tikka sourdough sandwich with sriracha sauce.",
+    description:
+      "A freshly made chicken tikka sourdough sandwich with sriracha sauce.",
     category: "Sandwich",
     price: "23.00",
     currency: "AED",
@@ -2194,13 +1700,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [22, 98],
-    similarItems: [101, 99]
   },
   {
     id: 101,
@@ -2216,13 +1717,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [22, 100],
-    similarItems: [102, 99]
   },
   {
     id: 102,
@@ -2238,13 +1734,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 101],
-    similarItems: [103, 100]
   },
   {
     id: 103,
@@ -2260,13 +1751,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 102],
-    similarItems: [104, 100]
   },
   {
     id: 104,
@@ -2282,13 +1768,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 103],
-    similarItems: [105, 102]
   },
   {
     id: 105,
@@ -2304,13 +1785,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 104],
-    similarItems: [106, 102]
   },
   {
     id: 106,
@@ -2326,13 +1802,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 105],
-    similarItems: [104, 107]
   },
   {
     id: 107,
@@ -2348,13 +1819,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 106],
-    similarItems: [105, 108]
   },
   {
     id: 108,
@@ -2370,13 +1836,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Medium",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 107],
-    similarItems: [106, 109]
   },
   {
     id: 109,
@@ -2392,13 +1853,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [22, 110],
-    similarItems: [108, 110]
   },
   {
     id: 110,
@@ -2414,13 +1870,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 8,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 109],
-    similarItems: [111, 109]
   },
   {
     id: 111,
@@ -2436,13 +1887,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 7,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 110],
-    similarItems: [112, 109]
   },
   {
     id: 112,
@@ -2458,13 +1904,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [22, 111],
-    similarItems: [113, 109]
   },
   {
     id: 113,
@@ -2480,13 +1921,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [22, 112],
-    similarItems: [114, 109]
   },
   {
     id: 114,
@@ -2502,13 +1938,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Non-Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 10,
     caffeineLevel: "None",
     sufficientFor: 2,
-    recommendedPairing: [22, 113],
-    similarItems: [112, 115]
   },
   {
     id: 115,
@@ -2524,18 +1955,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 116],
-    similarItems: [114, 116]
   },
   {
     id: 116,
     name: "Chocolate Muffins with Filling",
-    description: "Muffins filled with rich chocolate sauce and mixed with chocolate chips.",
+    description:
+      "Muffins filled with rich chocolate sauce and mixed with chocolate chips.",
     category: "Muffin",
     price: "13.00",
     currency: "AED",
@@ -2546,13 +1973,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 115],
-    similarItems: [117, 115]
   },
   {
     id: 117,
@@ -2568,18 +1990,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 6,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 116],
-    similarItems: [115, 118]
   },
   {
     id: 118,
     name: "Dunkin Espresso Capsules - Signature Blend",
-    description: "10 capsules of smooth and flavorful medium-dark roast espresso.",
+    description:
+      "10 capsules of smooth and flavorful medium-dark roast espresso.",
     category: "Beverage Capsules",
     price: "21.50",
     currency: "AED",
@@ -2590,13 +2008,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 117],
-    similarItems: [119, 116]
   },
   {
     id: 119,
@@ -2612,13 +2025,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 118],
-    similarItems: [120, 117]
   },
   {
     id: 120,
@@ -2634,13 +2042,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Medium",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 119],
-    similarItems: [118, 121]
   },
   {
     id: 121,
@@ -2656,13 +2059,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 4,
-    recommendedPairing: [22, 120],
-    similarItems: [118, 122]
   },
   {
     id: 122,
@@ -2678,13 +2076,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 4,
-    recommendedPairing: [22, 121],
-    similarItems: [119, 123]
   },
   {
     id: 123,
@@ -2700,13 +2093,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 4,
-    recommendedPairing: [22, 122],
-    similarItems: [120, 124]
   },
   {
     id: 124,
@@ -2722,13 +2110,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 2,
     caffeineLevel: "High",
     sufficientFor: 4,
-    recommendedPairing: [22, 123],
-    similarItems: [121, 125]
   },
   {
     id: 125,
@@ -2744,13 +2127,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 124],
-    similarItems: [126, 123]
   },
   {
     id: 126,
@@ -2766,13 +2144,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 125],
-    similarItems: [127, 125]
   },
   {
     id: 127,
@@ -2788,13 +2161,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 4,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 128],
-    similarItems: [126, 129]
   },
   {
     id: 128,
@@ -2810,13 +2178,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 129],
-    similarItems: [127, 130]
   },
   {
     id: 129,
@@ -2832,13 +2195,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 128],
-    similarItems: [126, 130]
   },
   {
     id: 130,
@@ -2854,13 +2212,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 2,
     popularity: 5,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 129],
-    similarItems: [128, 131]
   },
   {
     id: 131,
@@ -2876,13 +2229,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: true,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 130],
-    similarItems: [128, 132]
   },
   {
     id: 132,
@@ -2898,13 +2246,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 131],
-    similarItems: [133, 130]
   },
   {
     id: 133,
@@ -2920,13 +2263,8 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 132],
-    similarItems: [134, 131]
   },
   {
     id: 134,
@@ -2942,18 +2280,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 3,
     popularity: 4,
-    cheaper: false,
-    servingSize: "Small",
-    preparationTime: 1,
     caffeineLevel: "High",
     sufficientFor: 1,
-    recommendedPairing: [22, 133],
-    similarItems: [132, 135]
   },
   {
     id: 135,
     name: "Stainless Thermos Bottle White 500ML",
-    description: "500ML white stainless steel thermos bottle to keep beverages hot or cold.",
+    description:
+      "500ML white stainless steel thermos bottle to keep beverages hot or cold.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -2964,18 +2298,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 134],
-    similarItems: [136, 132]
   },
   {
     id: 136,
     name: "Stainless Thermos Bottle Pink 500ML",
-    description: "500ML pink stainless steel thermos bottle to keep beverages hot or cold.",
+    description:
+      "500ML pink stainless steel thermos bottle to keep beverages hot or cold.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -2986,18 +2316,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 135],
-    similarItems: [137, 135]
   },
   {
     id: 137,
     name: "Stainless Thermos Bottle Gold 500ML",
-    description: "500ML gold stainless steel thermos bottle to keep beverages hot or cold.",
+    description:
+      "500ML gold stainless steel thermos bottle to keep beverages hot or cold.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -3008,18 +2334,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 136],
-    similarItems: [138, 135]
   },
   {
     id: 138,
     name: "Stainless Thermos Bottle Orange 500ML",
-    description: "500ML orange stainless steel thermos bottle to keep beverages hot or cold.",
+    description:
+      "500ML orange stainless steel thermos bottle to keep beverages hot or cold.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -3030,18 +2352,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 137],
-    similarItems: [139, 136]
   },
   {
     id: 139,
     name: "Double Walled Water Bottle White 500ML",
-    description: "500ML white double-walled water bottle to keep beverages at the perfect temperature.",
+    description:
+      "500ML white double-walled water bottle to keep beverages at the perfect temperature.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -3052,18 +2370,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 138],
-    similarItems: [140, 137]
   },
   {
     id: 140,
     name: "Double Walled Water Bottle Pink 500ML",
-    description: "500ML pink double-walled water bottle to keep beverages at the perfect temperature.",
+    description:
+      "500ML pink double-walled water bottle to keep beverages at the perfect temperature.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -3074,18 +2388,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 139],
-    similarItems: [141, 138]
   },
   {
     id: 141,
     name: "Double Walled Water Bottle Gold 500ML",
-    description: "500ML gold double-walled water bottle to keep beverages at the perfect temperature.",
+    description:
+      "500ML gold double-walled water bottle to keep beverages at the perfect temperature.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -3096,18 +2406,14 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 140],
-    similarItems: [142, 139]
   },
   {
     id: 142,
     name: "Double Walled Water Bottle Orange 500ML",
-    description: "500ML orange double-walled water bottle to keep beverages at the perfect temperature.",
+    description:
+      "500ML orange double-walled water bottle to keep beverages at the perfect temperature.",
     category: "Bottle Merchandise",
     price: "61.00",
     currency: "AED",
@@ -3118,12 +2424,7 @@ export const menuItems: MenuItem[] = [
     dietaryPreference: ["Vegetarian"],
     healthinessScore: 5,
     popularity: 3,
-    cheaper: false,
-    servingSize: "Large",
-    preparationTime: 0,
     caffeineLevel: "None",
     sufficientFor: 1,
-    recommendedPairing: [22, 141],
-    similarItems: [143, 140]
   },
 ];
