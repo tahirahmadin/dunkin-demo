@@ -4,7 +4,7 @@ import { Message } from "./Message";
 import { ChatInput } from "./ChatInput";
 import { useChatContext } from "../context/ChatContext";
 import { MenuItem } from "./MenuItem";
-import { menuItems as allMenuItems } from "../data/menuData";
+import { MenuItemWithImage as allMenuItems } from "../data/menuDataFront";
 import { useState } from "react";
 import { Menu } from "lucide-react";
 
@@ -19,7 +19,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   input,
   setInput,
   onSubmit,
-  onImageUpload, 
+  onImageUpload,
   placeholder,
   isLoading = false,
 }) => {
@@ -120,7 +120,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         {cleanMessages.map((message) => (
           <Message key={message.id} message={message} onRetry={() => {}} />
         ))}
-        {console.log(cleanMessages)}
+
         {state.isLoading && (
           <div className="flex justify-center">
             <img
