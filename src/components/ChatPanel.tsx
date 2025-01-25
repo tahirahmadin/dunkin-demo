@@ -19,7 +19,9 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   input,
   setInput,
   onSubmit,
+  onImageUpload, 
   placeholder,
+  isLoading = false,
 }) => {
   const { state } = useChatContext();
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -192,7 +194,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         onSubmit={handleSubmit}
         showQuickActions={state.messages.length <= 1}
         placeholder={placeholder}
-        isLoading={state.isLoading}
+        isLoading={isLoading}
       />
     </>
   );

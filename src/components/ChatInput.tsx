@@ -1,12 +1,15 @@
 // src/components/ChatInput.tsx
 import React from "react";
-import { Send, Coffee, Pizza, Clock, Siren as Fire } from "lucide-react";
+import { Send, ImageIcon, Coffee, Pizza, Clock, Siren as Fire } from "lucide-react";
 
 interface ChatInputProps {
   input: string;
   setInput: (value: string) => void;
   onSubmit: (e: React.FormEvent) => void;
+  onImageUpload: (file: File) => void;
   isLoading?: boolean;
+  className?: string;
+  placeholder?: string;
   showQuickActions?: boolean;
 }
 
@@ -14,9 +17,18 @@ export const ChatInput: React.FC<ChatInputProps> = ({
   input,
   setInput,
   onSubmit,
+  onImageUpload,
   isLoading = false,
+  className = '',
+  placeholder = 'Type a message...',
   showQuickActions = true,
 }) => {
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    onImageUpload(file);
+  };
+
   const handleQuickAction = (message: string) => {
     setInput(message);
     const event = new Event("submit") as unknown as React.FormEvent;
@@ -24,7 +36,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
   };
 
   return (
-    <div className="p-4 border-t border-white/20 bg-white/50 backdrop-blur-sm">
+    <div className={`p-4 border-t border-white/20 bg-white/50 backdrop-blur-sm ${className}`}>
       <div className="h-[160px]">
         {showQuickActions && !input && (
           <div className="grid grid-cols-2 gap-2 mb-3">
@@ -88,14 +100,23 @@ export const ChatInput: React.FC<ChatInputProps> = ({
       <form onSubmit={onSubmit} className="flex items-center gap-2">
         <input
           type="text"
-          placeholder="Ask about the menu..."
+          placeholder={placeholder}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           disabled={isLoading}
           className="flex-1 p-2 rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-orange-500 backdrop-blur-sm placeholder:text-gray-500 disabled:opacity-50"
         />
-        <button
-          type="submit"
+        <label className="cursor-pointer p-2 bg-orange-500 hover:bg-orange-600 rounded-full text-white transition-colors">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="hidden"
+          />
+          <ImageIcon className="w-5 h-5" />
+        </label>
+        <button 
+          type="submit" 
           disabled={isLoading || !input.trim()}
           className="p-2 bg-orange-500 hover:bg-orange-600 rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >

@@ -9,6 +9,7 @@ import { SlidePanel } from "./SlidePanel";
 import { CartSummary } from "./CartSummary";
 import { QueryType } from "../context/ChatContext";
 import { menuItems } from "../data/menuData";
+import { ImageService } from '../services/ImageService';
 import axios from "axios";
 const chatService = new ChatService();
 
@@ -28,6 +29,77 @@ export const DunkinOrderApp: React.FC = () => {
   // Replace with your DeepSeek API endpoint and API key
   const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"; // Example endpoint
   const API_KEY = import.meta.env.VITE_PUBLIC_DEEPSEEK_KEY; // Replace with your actual API key
+
+  const imageService = new ImageService();
+
+  const handleImageUpload = async (file: File) => {
+    // Create local image URL and dispatch user message
+    const imageUrl = URL.createObjectURL(file);
+    dispatch({
+      type: "ADD_MESSAGE",
+      payload: {
+        id: Date.now(),
+        text: "Image uploaded",
+        isBot: false,
+        time: new Date().toLocaleTimeString(),
+        imageUrl,
+        queryType: QueryType.MENU_QUERY
+      }
+    }); 
+  
+    try {
+      // Analyze image using OpenAI
+      const imageDescription = await imageService.analyzeImage(file);
+  
+      // Use image description to suggest menu items
+      const prompt = `Here is the menu data: ${JSON.stringify(menuItems)}. Based on this image description: "${imageDescription}", analyze the context intelligently and suggest Dunkin' Donuts menu items. Return in strict JSON format: { text: "brief, witty reasoning linking image to food", items: [{ id: number, name: string, price: string }] }. Key requirements:
+      - Reasoning must be clever, playful (max 15 words)
+      - Show you understand the image context
+      - Select 2-4 most relevant menu items
+      - Match items creatively to image scenario
+      - Use fun, smart tone
+      - No extra text or explanations`;
+      
+      const response = await axios.post(
+        DEEPSEEK_API_URL,
+        {
+          model: "deepseek-chat",
+          messages: [{ role: "user", content: prompt }],
+          max_tokens: 2000,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${API_KEY}`
+          }
+        }
+      );
+  
+      // Dispatch bot response
+      dispatch({
+        type: "ADD_MESSAGE",
+        payload: {
+          id: Date.now() + 1,
+          text: response.data.choices[0].message.content,
+          isBot: true,
+          time: new Date().toLocaleTimeString(),
+          queryType: QueryType.MENU_QUERY
+        }
+      });
+    } catch (error) {
+      console.error("Image analysis error:", error);
+      dispatch({
+        type: "ADD_MESSAGE",
+        payload: {
+          id: Date.now() + 1,
+          text: "Sorry, I couldn't analyze the image.",
+          isBot: true,
+          time: new Date().toLocaleTimeString(),
+          queryType: QueryType.GENERAL
+        }
+      });
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -303,7 +375,7 @@ export const DunkinOrderApp: React.FC = () => {
           setInput={setInput}
           onSubmit={handleSubmit}
           placeholder={getInputPlaceholder()}
-          onImageUpload={() => {}}
+          onImageUpload={handleImageUpload}
           isLoading={state.isLoading}
           queryType={state.currentQueryType}
         />
