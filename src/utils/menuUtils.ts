@@ -1,5 +1,5 @@
-import { menuItems } from "../data/menuData";
+import { MenuItemWithImage } from "../data/menuDataFront";
 
 export const findMenuItemById = (id: number) => {
-  return menuItems.find((item) => item.id === id);
+  return MenuItemWithImage.find((item) => item.id === id);
 };

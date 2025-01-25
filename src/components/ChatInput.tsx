@@ -1,6 +1,13 @@
 // src/components/ChatInput.tsx
 import React from "react";
-import { Send, ImageIcon, Coffee, Pizza, Clock, Siren as Fire } from "lucide-react";
+import {
+  Send,
+  ImageIcon,
+  Coffee,
+  Pizza,
+  Clock,
+  Siren as Fire,
+} from "lucide-react";
 
 interface ChatInputProps {
   input: string;
@@ -19,8 +26,8 @@ export const ChatInput: React.FC<ChatInputProps> = ({
   onSubmit,
   onImageUpload,
   isLoading = false,
-  className = '',
-  placeholder = 'Type a message...',
+  className = "",
+  placeholder = "Type a message...",
   showQuickActions = true,
 }) => {
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,10 +43,12 @@ export const ChatInput: React.FC<ChatInputProps> = ({
   };
 
   return (
-    <div className={`p-4 border-t border-white/20 bg-white/50 backdrop-blur-sm ${className}`}>
-      <div className="h-[160px]">
+    <div
+      className={`p-4 border-t border-white/20 bg-white/50 backdrop-blur-sm ${className}`}
+    >
+      <div className="h-[90px]">
         {showQuickActions && !input && (
-          <div className="grid grid-cols-2 gap-2 mb-3">
+          <div className="grid grid-cols-2 gap-1 mb-2">
             <button
               onClick={() =>
                 handleQuickAction("Suggest Lunch combo for AED 50 or less?")
@@ -49,9 +58,6 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               <Fire className="w-4 h-4 text-orange-500" />
               <span className="text-left">
                 <span className="font-medium block">Lunch combo</span>
-                <span className="text-xs text-gray-500">
-                  Lunch combo in AED 50
-                </span>
               </span>
             </button>
 
@@ -62,9 +68,6 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               <Coffee className="w-4 h-4 text-orange-500" />
               <span className="text-left">
                 <span className="font-medium block">Best Hot Coffees</span>
-                <span className="text-xs text-gray-500">
-                  Suggest Best Hot Coffees
-                </span>
               </span>
             </button>
 
@@ -75,9 +78,6 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               <Pizza className="w-4 h-4 text-orange-500" />
               <span className="text-left">
                 <span className="font-medium block">Donut Box Deal</span>
-                <span className="text-xs text-gray-500">
-                  Suggest Donut Box Deal
-                </span>
               </span>
             </button>
 
@@ -88,9 +88,6 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               <Clock className="w-4 h-4 text-orange-500" />
               <span className="text-left">
                 <span className="font-medium block">Coffee and Donuts</span>
-                <span className="text-xs text-gray-500">
-                  Suggest Coffee & Donuts
-                </span>
               </span>
             </button>
           </div>
@@ -115,8 +112,8 @@ export const ChatInput: React.FC<ChatInputProps> = ({
           />
           <ImageIcon className="w-5 h-5" />
         </label>
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           disabled={isLoading || !input.trim()}
           className="p-2 bg-orange-500 hover:bg-orange-600 rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >

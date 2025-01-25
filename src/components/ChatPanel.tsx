@@ -111,7 +111,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   return (
     <>
       <div
-        className={`h-[400px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
+        className={`h-[388px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
           state.mode === "browse" ? "hidden" : ""
         }`}
         style={{ maxHeight: 500 }}
@@ -124,7 +124,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         {state.isLoading && (
           <div className="flex justify-center">
             <img
-              src="https://cdn.dribbble.com/users/4567683/screenshots/9244379/untitled_artwork.gif"
+              src="https://i.pinimg.com/originals/dc/66/53/dc6653448a617b0564541708101d3eac.gif"
               className="h-32"
             />
             {/* <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500"></div> */}
@@ -133,7 +133,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
       </div>
 
       {state.mode === "browse" && (
-        <div className="h-[400px] flex bg-white/30 backdrop-blur-sm">
+        <div className="h-[550px] flex bg-white/30 backdrop-blur-sm">
           {/* Categories Panel */}
           <div className="w-1/3 border-r border-white/20 overflow-y-auto">
             <div className="p-3 bg-orange-50 border-b border-white/20">

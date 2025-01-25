@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import axios from "axios";
+import { MenuItemWithImage } from "../data/menuDataFront";
 import { menuItems } from "../data/menuData";
 import { MenuItem } from "./MenuItem";
 import { ImageIcon } from "lucide-react";
@@ -26,8 +27,10 @@ const MenuChatWithDeepSeek: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const prompt = `Here is the menu data: ${JSON.stringify(menuItems)}. Based on the uploaded image, suggest suitable menu items. Return response as { "text": "brief description", "items": [{"id": number, "name": string, "price": string}] }. Include 2-4 items.`;
-      
+      const prompt = `Here is the menu data: ${JSON.stringify(
+        menuItems
+      )}. Based on the uploaded image, suggest suitable menu items. Return response as { "text": "brief description", "items": [{"id": number, "name": string, "price": string}] }. Include 2-4 items.`;
+
       const response = await axios.post(
         DEEPSEEK_API_URL,
         {
@@ -38,8 +41,8 @@ const MenuChatWithDeepSeek: React.FC = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
-          }
+            Authorization: `Bearer ${API_KEY}`,
+          },
         }
       );
 
@@ -49,7 +52,7 @@ const MenuChatWithDeepSeek: React.FC = () => {
       console.error("Error:", error);
       setResponse({
         text: "Sorry, I couldn't process that image. Please try again.",
-        items: []
+        items: [],
       });
     } finally {
       setIsLoading(false);
@@ -61,8 +64,10 @@ const MenuChatWithDeepSeek: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const prompt = `Here is the menu data: ${JSON.stringify(menuItems)}. Based on this, answer the user's query: ${inputText}. Return the response in the format { text: "", items: [{ id: number, name: string, price: string }] }. Include max 7 items.`;
-      
+      const prompt = `Here is the menu data: ${JSON.stringify(
+        menuItems
+      )}. Based on this, answer the user's query: ${inputText}. Return the response in the format { text: "", items: [{ id: number, name: string, price: string }] }. Include max 7 items.`;
+
       const response = await axios.post(
         DEEPSEEK_API_URL,
         {
@@ -73,8 +78,8 @@ const MenuChatWithDeepSeek: React.FC = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
-          }
+            Authorization: `Bearer ${API_KEY}`,
+          },
         }
       );
 
@@ -84,7 +89,7 @@ const MenuChatWithDeepSeek: React.FC = () => {
       console.error("Error:", error);
       setResponse({
         text: "Failed to fetch response. Please try again.",
-        items: []
+        items: [],
       });
     } finally {
       setIsLoading(false);
@@ -93,24 +98,28 @@ const MenuChatWithDeepSeek: React.FC = () => {
 
   const filteredMenuItems = useMemo(() => {
     if (!response?.items) return [];
-    const itemMap = new Map(response.items.map(item => [item.id, item.name]));
-    return menuItems
-      .filter(menuItem => itemMap.has(menuItem.id))
-      .map(menuItem => ({
+    const itemMap = new Map(response.items.map((item) => [item.id, item.name]));
+    return MenuItemWithImage.filter((menuItem) => itemMap.has(menuItem.id)).map(
+      (menuItem) => ({
         ...menuItem,
         quantity: itemMap.get(menuItem.id),
-      }));
+      })
+    );
   }, [response]);
 
   return (
     <div className="max-w-2xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Menu Chat with DeepSeek</h1>
-      
+
       <div className="mb-4 space-y-4">
         {imagePreview && (
-          <img src={imagePreview} alt="Preview" className="h-32 object-cover rounded-lg" />
+          <img
+            src={imagePreview}
+            alt="Preview"
+            className="h-32 object-cover rounded-lg"
+          />
         )}
-        
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-2">
             <textarea
