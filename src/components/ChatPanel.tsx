@@ -109,9 +109,10 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   return (
     <>
       <div
-        className={`h-[500px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
+        className={`h-[400px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
           state.mode === "browse" ? "hidden" : ""
         }`}
+        style={{ maxHeight: 500 }}
         ref={chatContainerRef}
       >
         {cleanMessages.map((message) => (
@@ -185,6 +186,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         input={input}
         setInput={setInput}
         onSubmit={handleSubmit}
+        showQuickActions={state.messages.length <= 1}
         placeholder={placeholder}
         isLoading={state.isLoading}
       />
