@@ -124,8 +124,8 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         {state.isLoading && (
           <div className="flex justify-center">
             <img
-              src="https://i.pinimg.com/originals/dc/66/53/dc6653448a617b0564541708101d3eac.gif"
-              className="h-32"
+              src="https://i.pinimg.com/originals/f0/ca/90/f0ca90dd6924e009d86f4421cf2032b5.gif"
+              className="h-24"
             />
             {/* <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500"></div> */}
           </div>
