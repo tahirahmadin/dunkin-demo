@@ -127,7 +127,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
       </div>
 
       {state.mode === "browse" && (
-        <div className="h-[500px] flex bg-white/30 backdrop-blur-sm">
+        <div className="h-[400px] flex bg-white/30 backdrop-blur-sm">
           {/* Categories Panel */}
           <div className="w-1/3 border-r border-white/20 overflow-y-auto">
             <div className="p-3 bg-orange-50 border-b border-white/20">
