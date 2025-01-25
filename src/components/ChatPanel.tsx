@@ -65,6 +65,11 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
             const parsedText = JSON.parse(message.text);
             console.log("typeof");
             console.log(typeof parsedText === "object");
+
+            console.log(message.id);
+            console.log("text" in parsedText);
+            console.log("items" in parsedText);
+
             // Validate the JSON structure
             if (
               parsedText &&
@@ -73,6 +78,9 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
               "items" in parsedText
             ) {
               // Restructure the message object
+              console.log("Going here last try");
+              console.log(parsedText);
+              console.log(parsedText.text);
               return {
                 id: message.id,
                 isBot: message.isBot,
@@ -111,7 +119,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   return (
     <>
       <div
-        className={`h-[388px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
+        className={`h-[398px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
           state.mode === "browse" ? "hidden" : ""
         }`}
         style={{ maxHeight: 500 }}
@@ -120,7 +128,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         {cleanMessages.map((message) => (
           <Message key={message.id} message={message} onRetry={() => {}} />
         ))}
-
+        {console.log(cleanMessages)}
         {state.isLoading && (
           <div className="flex justify-center">
             <img

@@ -51,16 +51,9 @@ export const DunkinOrderApp: React.FC = () => {
       // Analyze image using OpenAI
       const imageDescription = await imageService.analyzeImage(file);
 
-      // Use image description to suggest menu items
       const prompt = `Here is the menu data: ${JSON.stringify(
         menuItems
-      )}. Based on this image description: "${imageDescription}", analyze the context intelligently and suggest Dunkin' Donuts menu items. Return in strict JSON format: { text: "brief, witty reasoning linking image to food", items: [{ id: number, name: string, price: string }] }. Key requirements:
-      - Reasoning must be clever, playful (max 15 words)
-      - Show you understand the image context
-      - Select 2-4 most relevant menu items
-      - Match items creatively to image scenario
-      - Use fun, smart tone
-      - No extra text or explanations`;
+      )}. Based on this image description: "${imageDescription}". Return the response in the format { "text": "", "items": [{ id: number, name: string, price: string }] }, where "text" is a summary and "items" is an array of matching menu items with only id, name, and price. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations.`;
 
       const response = await axios.post(
         DEEPSEEK_API_URL,

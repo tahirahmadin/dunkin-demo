@@ -46,14 +46,14 @@ export const ChatInput: React.FC<ChatInputProps> = ({
     <div
       className={`p-4 border-t border-white/20 bg-white/50 backdrop-blur-sm ${className}`}
     >
-      <div className="h-[90px]">
+      <div className="h-[80px]">
         {showQuickActions && !input && (
           <div className="grid grid-cols-2 gap-1 mb-2">
             <button
               onClick={() =>
                 handleQuickAction("Suggest Lunch combo for AED 50 or less?")
               }
-              className="flex items-center gap-2 p-3 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-sm text-gray-700 border border-gray-100"
+              className="flex items-center gap-2 p-2 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-xs text-gray-700 border border-gray-100"
             >
               <Fire className="w-4 h-4 text-orange-500" />
               <span className="text-left">
@@ -63,7 +63,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
 
             <button
               onClick={() => handleQuickAction("Suggest Best Hot Coffees?")}
-              className="flex items-center gap-2 p-3 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-sm text-gray-700 border border-gray-100"
+              className="flex items-center gap-2 p-2 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-xs text-gray-700 border border-gray-100"
             >
               <Coffee className="w-4 h-4 text-orange-500" />
               <span className="text-left">
@@ -73,7 +73,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
 
             <button
               onClick={() => handleQuickAction("Suggest Donut Box Deal?")}
-              className="flex items-center gap-2 p-3 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-sm text-gray-700 border border-gray-100"
+              className="flex items-center gap-2 p-2 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-xs text-gray-700 border border-gray-100"
             >
               <Pizza className="w-4 h-4 text-orange-500" />
               <span className="text-left">
@@ -83,7 +83,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
 
             <button
               onClick={() => handleQuickAction("Suggest Coffee and Donuts?")}
-              className="flex items-center gap-2 p-3 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-sm text-gray-700 border border-gray-100"
+              className="flex items-center gap-2 p-2 bg-white/80 rounded-xl hover:bg-white/90 transition-colors text-xs text-gray-700 border border-gray-100"
             >
               <Clock className="w-4 h-4 text-orange-500" />
               <span className="text-left">
