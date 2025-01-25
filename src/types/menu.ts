@@ -4,7 +4,6 @@ export interface MenuItem {
   description: string;
   category: string | null;
   price: string;
-  restaurant: string;
   spicinessLevel: number;
   sweetnessLevel: number;
   dietaryPreference: string[];
