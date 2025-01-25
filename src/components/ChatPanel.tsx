@@ -59,6 +59,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         if (message.isBot && message.text) {
           try {
             // Parse the text field into JSON
+            console.log(JSON.parse(message.text));
             const parsedText = JSON.parse(message.text);
             console.log("typeof");
             console.log(typeof parsedText === "object");
@@ -66,9 +67,8 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
             if (
               parsedText &&
               typeof parsedText === "object" &&
-              "start" in parsedText &&
-              "menu" in parsedText &&
-              "end" in parsedText
+              "text" in parsedText &&
+              "items" in parsedText
             ) {
               // Restructure the message object
               return {
@@ -78,9 +78,8 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
                 text: message.text,
                 queryType: message.queryType,
                 structuredText: {
-                  start: parsedText.start,
-                  menu: parsedText.menu,
-                  end: parsedText.end,
+                  text: parsedText.text,
+                  items: parsedText.items,
                 },
               };
             }
@@ -109,7 +108,6 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
 
   return (
     <>
-      {console.log(cleanMessages)}
       <div
         className={`h-[500px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
           state.mode === "browse" ? "hidden" : ""
@@ -119,7 +117,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         {cleanMessages.map((message) => (
           <Message key={message.id} message={message} onRetry={() => {}} />
         ))}
-
+        {console.log(cleanMessages)}
         {state.isLoading && (
           <div className="flex justify-center">
             <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500"></div>

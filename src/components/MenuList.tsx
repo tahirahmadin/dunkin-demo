@@ -12,7 +12,7 @@ interface MenuListProps {
   items: any[];
 }
 
-export const MenuList: React.FC<MenuListProps> = ({ messageId, items }) => {
+export const MenuList: React.FC<MenuListProps> = ({ items }) => {
   const { state, dispatch } = useChatContext();
 
   // Get serialized memory for chat context
@@ -25,23 +25,24 @@ export const MenuList: React.FC<MenuListProps> = ({ messageId, items }) => {
   }, [state.messages]);
 
   const filteredMenuItems = useMemo(() => {
+    console.log(items);
     // Create a map from the items array for quick lookup
-    const itemMap = new Map(items.map((item) => [item.id, item.quantity]));
+    const itemMap = new Map(items.map((item) => [item.id, item.name]));
 
     // Filter menuItems and include the quantity from the items array
     return menuItems
-      .filter((menuItem) => itemMap.has(menuItem.id.toString()))
+      .filter((menuItem) => itemMap.has(menuItem.id))
       .map((menuItem) => ({
         ...menuItem,
-        quantity: itemMap.get(menuItem.id.toString()), // Add quantity to the result
+        quantity: itemMap.get(menuItem.id), // Add quantity to the result
       }));
   }, [items, menuItems]);
 
   return (
-    <div className="mt-2 -mx-4">
+    <div className="mt-2 ">
       <div className="flex overflow-x-auto px-4 gap-3 snap-x scrollbar-hide pb-2">
         {filteredMenuItems.map((meal, index) => (
-          <div key={index} className="flex-none w-[140px] snap-start">
+          <div key={index} className="flex-none w-[120px]  snap-start">
             <MenuItem
               id={meal.id}
               name={meal.name}
@@ -53,7 +54,7 @@ export const MenuList: React.FC<MenuListProps> = ({ messageId, items }) => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center mt-3">
+      {/* <div className="flex justify-center mt-3">
         <button
           onClick={() => {
             dispatch({
@@ -118,7 +119,7 @@ export const MenuList: React.FC<MenuListProps> = ({ messageId, items }) => {
           <RefreshCw className="w-4 h-4" />
           <span className="text-sm font-medium">Suggest new</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

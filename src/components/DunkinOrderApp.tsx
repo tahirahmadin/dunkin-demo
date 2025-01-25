@@ -8,9 +8,14 @@ import { ChatPanel } from "./ChatPanel";
 import { SlidePanel } from "./SlidePanel";
 import { CartSummary } from "./CartSummary";
 import { QueryType } from "../context/ChatContext";
-import { config } from "../config";
-
+import { menuItems } from "../data/menuData";
+import axios from "axios";
 const chatService = new ChatService();
+
+interface ApiResponse {
+  text: string;
+  items: { id: number; name: string; price: string }[];
+}
 
 export const DunkinOrderApp: React.FC = () => {
   const { state, dispatch } = useChatContext();
@@ -20,62 +25,78 @@ export const DunkinOrderApp: React.FC = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Serialize previous messages for memory context
-  const serializedMemory = useMemo(() => {
-    return state.messages
-      .map((message) =>
-        message.isBot ? `Bot: ${message.text}` : `User: ${message.text}`
-      )
-      .join("\n");
-  }, [state.messages]);
+  // Replace with your DeepSeek API endpoint and API key
+  const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"; // Example endpoint
+  const API_KEY = import.meta.env.VITE_PUBLIC_DEEPSEEK_KEY; // Replace with your actual API key
 
-  const handleSubmit = async (e: React.FormEvent, serializedMemory: string) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
     // Switch to chat mode if currently in browse mode when starting checkout
-    if (state.checkout.step && state.mode === 'browse') {
-      dispatch({ type: "SET_MODE", payload: 'chat' });
+    if (state.checkout.step && state.mode === "browse") {
+      dispatch({ type: "SET_MODE", payload: "chat" });
     }
-    
+
     // Handle checkout flow
     if (state.checkout.step) {
       const userMessage = {
         id: Date.now(),
         text: input.trim(),
         isBot: false,
-        time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-        queryType: QueryType.CHECKOUT
+        time: new Date().toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        }),
+        queryType: QueryType.CHECKOUT,
       };
       dispatch({ type: "ADD_MESSAGE", payload: userMessage });
-      
-      if (state.checkout.step === 'details') {
+
+      if (state.checkout.step === "details") {
         if (!state.checkout.orderDetails.name) {
-          dispatch({ type: "UPDATE_ORDER_DETAILS", payload: { name: input.trim() } });
+          dispatch({
+            type: "UPDATE_ORDER_DETAILS",
+            payload: { name: input.trim() },
+          });
           dispatch({
             type: "ADD_MESSAGE",
             payload: {
               id: Date.now() + 1,
               text: "Great! What's your delivery address?",
               isBot: true,
-              time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-              queryType: QueryType.CHECKOUT
-            }
+              time: new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              }),
+              queryType: QueryType.CHECKOUT,
+            },
           });
         } else if (!state.checkout.orderDetails.address) {
-          dispatch({ type: "UPDATE_ORDER_DETAILS", payload: { address: input.trim() } });
+          dispatch({
+            type: "UPDATE_ORDER_DETAILS",
+            payload: { address: input.trim() },
+          });
           dispatch({
             type: "ADD_MESSAGE",
             payload: {
               id: Date.now() + 1,
               text: "Perfect! And your phone number?",
               isBot: true,
-              time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-              queryType: QueryType.CHECKOUT
-            }
+              time: new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              }),
+              queryType: QueryType.CHECKOUT,
+            },
           });
         } else if (!state.checkout.orderDetails.phone) {
-          dispatch({ type: "UPDATE_ORDER_DETAILS", payload: { phone: input.trim() } });
+          dispatch({
+            type: "UPDATE_ORDER_DETAILS",
+            payload: { phone: input.trim() },
+          });
           dispatch({ type: "SET_CHECKOUT_STEP", payload: "payment" });
           dispatch({
             type: "ADD_MESSAGE",
@@ -83,52 +104,80 @@ export const DunkinOrderApp: React.FC = () => {
               id: Date.now() + 1,
               text: "Great! Now for payment. Please enter your card number:",
               isBot: true,
-              time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-              queryType: QueryType.CHECKOUT
-            }
+              time: new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              }),
+              queryType: QueryType.CHECKOUT,
+            },
           });
         }
-      } else if (state.checkout.step === 'payment') {
+      } else if (state.checkout.step === "payment") {
         if (!state.checkout.orderDetails.cardNumber) {
-          dispatch({ type: "UPDATE_ORDER_DETAILS", payload: { cardNumber: input.trim() } });
+          dispatch({
+            type: "UPDATE_ORDER_DETAILS",
+            payload: { cardNumber: input.trim() },
+          });
           dispatch({
             type: "ADD_MESSAGE",
             payload: {
               id: Date.now() + 1,
               text: "Please enter the card expiry date (MM/YY):",
               isBot: true,
-              time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-              queryType: QueryType.CHECKOUT
-            }
+              time: new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              }),
+              queryType: QueryType.CHECKOUT,
+            },
           });
         } else if (!state.checkout.orderDetails.expiryDate) {
-          dispatch({ type: "UPDATE_ORDER_DETAILS", payload: { expiryDate: input.trim() } });
+          dispatch({
+            type: "UPDATE_ORDER_DETAILS",
+            payload: { expiryDate: input.trim() },
+          });
           dispatch({
             type: "ADD_MESSAGE",
             payload: {
               id: Date.now() + 1,
               text: "Finally, please enter the CVV:",
               isBot: true,
-              time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-              queryType: QueryType.CHECKOUT
-            }
+              time: new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              }),
+              queryType: QueryType.CHECKOUT,
+            },
           });
         } else if (!state.checkout.orderDetails.cvv) {
-          dispatch({ type: "UPDATE_ORDER_DETAILS", payload: { cvv: input.trim() } });
+          dispatch({
+            type: "UPDATE_ORDER_DETAILS",
+            payload: { cvv: input.trim() },
+          });
           // Process the order
-          const total = state.cart.reduce((sum, item) => 
-            sum + (parseFloat(item.price) * item.quantity), 0
-          ).toFixed(2);
-          
+          const total = state.cart
+            .reduce(
+              (sum, item) => sum + parseFloat(item.price) * item.quantity,
+              0
+            )
+            .toFixed(2);
+
           dispatch({
             type: "ADD_MESSAGE",
             payload: {
               id: Date.now() + 1,
               text: `Thank you for your order! Your total is $${total}. Your order will be delivered to ${state.checkout.orderDetails.address}. We'll send updates to ${state.checkout.orderDetails.phone}.`,
               isBot: true,
-              time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-              queryType: QueryType.CHECKOUT
-            }
+              time: new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              }),
+              queryType: QueryType.CHECKOUT,
+            },
           });
           // Reset checkout and cart
           dispatch({ type: "SET_CHECKOUT_STEP", payload: null });
@@ -137,13 +186,6 @@ export const DunkinOrderApp: React.FC = () => {
       setInput("");
       return;
     }
-
-    let vegChoiceText = isVegOnly
-      ? " and suggest VEGETARIAN options only "
-      : "";
-    let inputQueryTrim =
-      input + vegChoiceText +
-      ` and suggested items should be atleast ${peopleCount} items if available`;
 
     // Determine query type
     const queryType = chatService.determineQueryType(input.trim());
@@ -164,28 +206,52 @@ export const DunkinOrderApp: React.FC = () => {
     dispatch({ type: "SET_LOADING", payload: true });
 
     try {
-      const response = await chatService.queryMenu(
-        queryType === "MENU_QUERY" ? input : input,
-        serializedMemory
-      );
+      try {
+        const prompt = `Here is the menu data: ${JSON.stringify(
+          menuItems
+        )}. Based on this, answer the user's query: ${input}. Return the response in the format { text: "", items: [{ id: number, name: string, price: string }] }, where "text" is a summary and "items" is an array of matching menu items with only id, name, and price. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations.`;
+        // Call the DeepSeek API with the correct request format
+        const response = await axios.post(
+          DEEPSEEK_API_URL,
+          {
+            model: "deepseek-chat", // Specify the model you're using
+            messages: [
+              {
+                role: "user",
+                content: prompt,
+              },
+            ],
+            max_tokens: 2000, // Adjust based on your needs
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${API_KEY}`,
+            },
+          }
+        );
 
-      // Create bot message
-      const botMessage = {
-        id: Date.now() + 1,
-        text: response.response,
-        isBot: true,
-        time: new Date().toLocaleTimeString(),
-        queryType, // Keep the same query type for the response
-      };
+        // Parse the API response
+        const apiResponseText = response.data.choices[0].message.content;
+        console.log(apiResponseText);
+        // const apiResponse = JSON.parse(apiResponseText) as ApiResponse;
+        // setResponse(apiResponse);
 
-      // Add bot message to chat
-      dispatch({ type: "ADD_MESSAGE", payload: botMessage });
+        // Create bot message
+        const botMessage = {
+          id: Date.now() + 1,
+          text: apiResponseText,
+          isBot: true,
+          time: new Date().toLocaleTimeString(),
+          queryType, // Keep the same query type for the response
+        };
 
-      // Handle menu items if present in response
-      if (response.menuItems) {
-        // You could add additional handling here for menu items
-        // For example, showing them in a different UI component
-        console.log("Menu items:", response.menuItems);
+        // Add bot message to chat
+        dispatch({ type: "ADD_MESSAGE", payload: botMessage });
+      } catch (error) {
+        console.error("Error calling DeepSeek API:", error);
+      } finally {
+        // setIsLoading(false);
       }
     } catch (error) {
       console.error("Error querying menu:", error);
@@ -222,7 +288,7 @@ export const DunkinOrderApp: React.FC = () => {
         <Header
           onOpenPanel={() => setIsPanelOpen(true)}
           onCartClick={() => setIsCartOpen(!isCartOpen)}
-          queryType={state.currentQueryType}
+          // queryType={state.currentQueryType}
         />
 
         <Filters
@@ -250,44 +316,56 @@ export const DunkinOrderApp: React.FC = () => {
         savedAddresses={[]}
         onDeleteAddress={() => {}}
       />
-      
+
       {/* Cart Summary */}
       {isCartOpen && (
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden animate-slide-up">
             <div className="p-4 bg-orange-50 border-b flex justify-between items-center">
               <h2 className="font-semibold text-gray-800">Your Cart</h2>
-              <button 
+              <button
                 onClick={() => setIsCartOpen(false)}
                 className="text-gray-500 hover:text-gray-700"
               >
                 ×
               </button>
             </div>
-            
+
             <div className="max-h-[60vh] overflow-y-auto p-4 space-y-4">
               {state.cart.map((item) => (
-                <div key={item.id} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                <div
+                  key={item.id}
+                  className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg"
+                >
                   <div className="flex-1">
                     <h3 className="font-medium text-gray-800">{item.name}</h3>
-                    <p className="text-sm text-gray-500">${item.price} × {item.quantity}</p>
+                    <p className="text-sm text-gray-500">
+                      ${item.price} × {item.quantity}
+                    </p>
                   </div>
                   <div className="flex items-center gap-2">
                     <button
-                      onClick={() => dispatch({
-                        type: "UPDATE_CART_ITEM",
-                        payload: { ...item, quantity: Math.max(0, item.quantity - 1) }
-                      })}
+                      onClick={() =>
+                        dispatch({
+                          type: "UPDATE_CART_ITEM",
+                          payload: {
+                            ...item,
+                            quantity: Math.max(0, item.quantity - 1),
+                          },
+                        })
+                      }
                       className="p-1 hover:bg-gray-200 rounded"
                     >
                       -
                     </button>
                     <span className="w-8 text-center">{item.quantity}</span>
                     <button
-                      onClick={() => dispatch({
-                        type: "UPDATE_CART_ITEM",
-                        payload: { ...item, quantity: item.quantity + 1 }
-                      })}
+                      onClick={() =>
+                        dispatch({
+                          type: "UPDATE_CART_ITEM",
+                          payload: { ...item, quantity: item.quantity + 1 },
+                        })
+                      }
                       className="p-1 hover:bg-gray-200 rounded"
                     >
                       +
@@ -296,13 +374,20 @@ export const DunkinOrderApp: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             {state.cart.length > 0 ? (
               <div className="p-4 border-t">
                 <div className="flex justify-between mb-4">
                   <span className="font-medium">Total</span>
                   <span className="font-bold text-orange-500">
-                    ${state.cart.reduce((total, item) => total + (parseFloat(item.price) * item.quantity), 0).toFixed(2)}
+                    $
+                    {state.cart
+                      .reduce(
+                        (total, item) =>
+                          total + parseFloat(item.price) * item.quantity,
+                        0
+                      )
+                      .toFixed(2)}
                   </span>
                 </div>
                 <button

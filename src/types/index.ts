@@ -12,9 +12,8 @@ type MenuItem = {
 };
 
 type StructuredText = {
-  start: string;
-  menu: MenuItem[];
-  end: string;
+  text: string;
+  items: MenuItem[];
 };
 
 export interface Message {

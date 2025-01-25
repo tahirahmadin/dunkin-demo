@@ -37,20 +37,20 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   };
   return (
     <div
-      className={`bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow ${
+      className={`h-[180px] bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow ${
         compact ? "p-1.5" : "p-3"
       }`}
     >
-      <div className="relative">
+      <div className="relative h-full">
         <div
-          className={`aspect-square w-full flex items-center justify-center rounded-xl bg-gray-50 ${
+          className={`aspect-[4/3] w-full flex items-center justify-center rounded-xl bg-gray-50 ${
             compact ? "p-0.5" : "p-2"
           }`}
         >
           <img
             src={image}
             alt={name}
-            className={`w-full object-contain rounded-xl ${
+            className={`w-full h-full object-cover rounded-xl ${
               compact ? "p-1" : "p-2"
             }`}
           />

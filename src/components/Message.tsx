@@ -55,12 +55,12 @@ export const Message: React.FC<MessageProps> = ({ message, onRetry }) => {
 
         {message.isBot && message.structuredText && (
           <div>
-            <p className="text-gray-600">{message.structuredText.start}</p>
-            {message.structuredText.menu?.length > 0 && (
+            <p className="text-gray-600">{message.structuredText.text}</p>
+            {message.structuredText.items?.length > 0 && (
               <div>
                 <MenuList
                   messageId={message.id}
-                  items={message.structuredText.menu}
+                  items={message.structuredText.items}
                 />
               </div>
             )}
