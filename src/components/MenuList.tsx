@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { RefreshCw } from "lucide-react";
 import { MenuItem } from "./MenuItem";
-import { menuItems } from "../data/menuData";
+import { MenuItemWithImage } from "../data/menuDataFront";
 import { useChatContext, QueryType } from "../context/ChatContext";
 import { ChatService } from "../services/chatService";
 
@@ -30,13 +30,13 @@ export const MenuList: React.FC<MenuListProps> = ({ items }) => {
     const itemMap = new Map(items.map((item) => [item.id, item.name]));
 
     // Filter menuItems and include the quantity from the items array
-    return menuItems
-      .filter((menuItem) => itemMap.has(menuItem.id))
-      .map((menuItem) => ({
+    return MenuItemWithImage.filter((menuItem) => itemMap.has(menuItem.id)).map(
+      (menuItem) => ({
         ...menuItem,
         quantity: itemMap.get(menuItem.id), // Add quantity to the result
-      }));
-  }, [items, menuItems]);
+      })
+    );
+  }, [items, MenuItemWithImage]);
 
   return (
     <div className="mt-2 ">
