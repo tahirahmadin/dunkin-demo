@@ -1,14 +1,13 @@
-// src/App.tsx
-
 import { ChatProvider } from "./context/ChatContext";
+import { WalletProvider } from "./context/WalletContext";
 import { DunkinOrderApp } from "./components/DunkinOrderApp";
 
-function App() {
+export default function App() {
   return (
-    <ChatProvider>
-      <DunkinOrderApp />
-    </ChatProvider>
+    <WalletProvider>
+      <ChatProvider>
+        <DunkinOrderApp />
+      </ChatProvider>
+    </WalletProvider>
   );
 }
-
-export default App;
