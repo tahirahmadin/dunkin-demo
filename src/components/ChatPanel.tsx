@@ -126,20 +126,19 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         {cleanMessages.map((message) => (
           <Message key={message.id} message={message} onRetry={() => {}} />
         ))}
-        {console.log(cleanMessages)}
+
         {state.isLoading && (
           <div className="flex justify-center">
             <img
               src="https://i.pinimg.com/originals/f0/ca/90/f0ca90dd6924e009d86f4421cf2032b5.gif"
               className="h-24"
             />
-            {/* <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500"></div> */}
           </div>
         )}
       </div>
 
       {state.mode === "browse" && (
-        <div className="flex-1 flex bg-white/30 backdrop-blur-sm">
+        <div className="flex-1 flex bg-white/30 backdrop-blur-sm overflow-y-auto">
           {/* Categories Panel */}
           <div className="w-1/3 border-r border-white/20 overflow-y-auto">
             <div className="p-3 bg-orange-50 border-b border-white/20">
@@ -176,7 +175,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
           </div>
 
           {/* Menu Items Grid */}
-          <div className="flex-1 overflow-y-auto p-4">
+          <div className="flex-1 overflow-y-scroll p-4">
             <div className="grid grid-cols-2 gap-4">
               {filteredMenuItems.map((item) => (
                 <MenuItem

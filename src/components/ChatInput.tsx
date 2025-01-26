@@ -46,9 +46,9 @@ export const ChatInput: React.FC<ChatInputProps> = ({
     <div
       className={`p-4 border-t border-white/20 bg-white/50 backdrop-blur-sm ${className}`}
     >
-      <div className="h-[80px]">
+      <div>
         {showQuickActions && !input && (
-          <div className="grid grid-cols-2 gap-1 mb-2">
+          <div className="grid grid-cols-2 gap-1 mb-2 h-[80px]">
             <button
               onClick={() =>
                 handleQuickAction("Suggest Lunch combo for AED 50 or less?")
