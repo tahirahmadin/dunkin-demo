@@ -17,7 +17,7 @@ Welcome to the **Dunkin' Donuts Demo Chatbot**! This project showcases an AI-pow
 
 <p align="start">
   <img src="2.png" alt="Menu Display" width="45%">
-  <img src="5.png" alt="Chatbot Image processing" width="45%">
+  <img src="6.png" alt="Chatbot Image processing" width="45%">
 
 </p>
 
