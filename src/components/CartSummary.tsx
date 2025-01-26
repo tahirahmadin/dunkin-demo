@@ -42,20 +42,20 @@ export const CartSummary: React.FC = () => {
     }
 
     dispatch({ type: "SET_CHECKOUT_STEP", payload: "details" });
-    // dispatch({
-    //   type: "ADD_MESSAGE",
-    //   payload: {
-    //     id: Date.now(),
-    //     text: "Please provide your delivery details to proceed with the order.",
-    //     isBot: true,
-    //     time: new Date().toLocaleTimeString("en-US", {
-    //       hour: "numeric",
-    //       minute: "numeric",
-    //       hour12: true,
-    //     }),
-    //     queryType: "CHECKOUT",
-    //   },
-    // });
+    dispatch({
+      type: "ADD_MESSAGE",
+      payload: {
+        id: Date.now(),
+        text: "Please provide your delivery details to proceed with the order.",
+        isBot: true,
+        time: new Date().toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        }),
+        queryType: "CHECKOUT",
+      },
+    });
     setIsExpanded(false);
   };
 
