@@ -1,4 +1,3 @@
-// src/components/ChatPanel.tsx
 import React, { useRef, useEffect, useMemo } from "react";
 import { Message } from "./Message";
 import { ChatInput } from "./ChatInput";
@@ -119,10 +118,9 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   return (
     <>
       <div
-        className={`h-[398px] overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
+        className={`flex-1 overflow-y-auto p-4 bg-white/30 backdrop-blur-sm scroll-smooth ${
           state.mode === "browse" ? "hidden" : ""
         }`}
-        style={{ maxHeight: 500 }}
         ref={chatContainerRef}
       >
         {cleanMessages.map((message) => (
@@ -141,7 +139,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
       </div>
 
       {state.mode === "browse" && (
-        <div className="h-[550px] flex bg-white/30 backdrop-blur-sm">
+        <div className="flex-1 flex bg-white/30 backdrop-blur-sm">
           {/* Categories Panel */}
           <div className="w-1/3 border-r border-white/20 overflow-y-auto">
             <div className="p-3 bg-orange-50 border-b border-white/20">

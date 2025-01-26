@@ -1,4 +1,3 @@
-// src/components/DunkinOrderApp.tsx
 import React, { useState, useMemo } from "react";
 import { useChatContext } from "../context/ChatContext";
 import { ChatService } from "../services/chatService";
@@ -350,8 +349,8 @@ export const DunkinOrderApp: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4 bg-[#E0E0E0]">
-      <div className="relative bg-white/70 backdrop-blur-md rounded-2xl shadow-xl w-full max-w-md overflow-hidden border border-white/20">
+    <div className="min-h-screen relative flex items-center justify-center bg-[#E0E0E0] sm:py-[5vh]">
+      <div className="relative bg-white/70 backdrop-blur-md rounded-none sm:rounded-2xl shadow-xl w-full h-screen sm:h-[90vh] max-w-md overflow-hidden border border-white/20 flex flex-col sm:mx-4">
         <Header
           onOpenPanel={() => setIsPanelOpen(true)}
           onCartClick={() => setIsCartOpen(!isCartOpen)}

@@ -40,9 +40,9 @@ export const MenuList: React.FC<MenuListProps> = ({ items }) => {
 
   return (
     <div className="mt-2 ">
-      <div className="flex overflow-x-auto px-4 gap-3 snap-x scrollbar-hide pb-2">
+      <div className="grid grid-cols-2 sm:flex overflow-x-auto px-2 sm:px-4 gap-2 sm:gap-3 snap-x scrollbar-hide pb-2">
         {filteredMenuItems.map((meal, index) => (
-          <div key={index} className="flex-none w-[120px]  snap-start">
+          <div key={index} className="sm:flex-none sm:w-[120px] snap-start">
             <MenuItem
               id={meal.id}
               name={meal.name}
@@ -54,72 +54,6 @@ export const MenuList: React.FC<MenuListProps> = ({ items }) => {
           </div>
         ))}
       </div>
-      {/* <div className="flex justify-center mt-3">
-        <button
-          onClick={() => {
-            dispatch({
-              type: "ADD_MESSAGE",
-              payload: {
-                id: Date.now(),
-                text: "Suggest me with other options from the menu",
-                isBot: false,
-                time: new Date().toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "numeric",
-                  hour12: true,
-                }),
-                queryType: QueryType.MENU_QUERY,
-              },
-            });
-            dispatch({ type: "SET_LOADING", payload: true });
-            chatService
-              .queryMenu(
-                "Suggest me better options from the menu",
-                serializedMemory
-              )
-              .then((response) => {
-                dispatch({
-                  type: "ADD_MESSAGE",
-                  payload: {
-                    id: Date.now() + 1,
-                    text: response.response,
-                    isBot: true,
-                    time: new Date().toLocaleTimeString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                    }),
-                    queryType: QueryType.MENU_QUERY,
-                  },
-                });
-              })
-              .catch((error) => {
-                console.error("Error getting suggestions:", error);
-                dispatch({
-                  type: "ADD_MESSAGE",
-                  payload: {
-                    id: Date.now() + 1,
-                    text: "Sorry, I couldn't get new suggestions right now. Please try again.",
-                    isBot: true,
-                    time: new Date().toLocaleTimeString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                    }),
-                    queryType: QueryType.GENERAL,
-                  },
-                });
-              })
-              .finally(() => {
-                dispatch({ type: "SET_LOADING", payload: false });
-              });
-          }}
-          className="flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-600 rounded-full hover:bg-orange-200 transition-all"
-        >
-          <RefreshCw className="w-4 h-4" />
-          <span className="text-sm font-medium">Suggest new</span>
-        </button>
-      </div> */}
     </div>
   );
 };
