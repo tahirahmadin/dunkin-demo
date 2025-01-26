@@ -161,7 +161,11 @@ const initialState: ChatState = {
       }),
 
       isBot: true,
-      time: new Date().toLocaleTimeString(),
+      time: new Date().toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      }),
       queryType: QueryType.GENERAL,
     },
   ],

@@ -44,7 +44,11 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ onSubmit }) => {
                     orderDetails.phone
                   }. Thank you for choosing Dunkin'!`,
             isBot: true,
-            time: new Date().toLocaleTimeString(),
+            time: new Date().toLocaleTimeString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
+            }),
             queryType: "CHECKOUT",
           },
         });
@@ -59,7 +63,11 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ onSubmit }) => {
           id: Date.now(),
           text: "Payment failed. Please try again.",
           isBot: true,
-          time: new Date().toLocaleTimeString(),
+          time: new Date().toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          }),
           queryType: "CHECKOUT",
         },
       });

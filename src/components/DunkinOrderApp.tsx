@@ -24,6 +24,7 @@ export const DunkinOrderApp: React.FC = () => {
   const [peopleCount, setPeopleCount] = useState(1);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isImageAnalyzing, setIsImageAnalyzing] = useState(false);
 
   // Replace with your DeepSeek API endpoint and API key
   const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"; // Example endpoint
@@ -32,15 +33,20 @@ export const DunkinOrderApp: React.FC = () => {
   const imageService = new ImageService();
 
   const handleImageUpload = async (file: File) => {
+    setIsImageAnalyzing(true);
     // Create local image URL and dispatch user message
     const imageUrl = URL.createObjectURL(file);
     dispatch({
       type: "ADD_MESSAGE",
       payload: {
         id: Date.now(),
-        text: "Image uploaded",
+        text: "",
         isBot: false,
-        time: new Date().toLocaleTimeString(),
+        time: new Date().toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        }),
         imageUrl,
         queryType: QueryType.MENU_QUERY,
       },
@@ -52,7 +58,7 @@ export const DunkinOrderApp: React.FC = () => {
 
       const prompt = `Here is the menu data: ${JSON.stringify(
         menuItems
-      )}. Based on this image description: "${imageDescription}". Return the response in the format { "text": "", "items": [{ id: number, name: string, price: string }] }, where "text" is a summary and "items" is an array of matching menu items with only id, name, and price. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations.`;
+      )}. Based on this image description: "${imageDescription}". Return the response in the format { "text": "", "items": [{ id: number, name: string, price: string }] }, where "text" is funny and clever summary and "items" is an array of matching menu items with only id, name, and price. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations or name of format.`;
 
       const response = await axios.post(
         DEEPSEEK_API_URL,
@@ -76,7 +82,11 @@ export const DunkinOrderApp: React.FC = () => {
           id: Date.now() + 1,
           text: response.data.choices[0].message.content,
           isBot: true,
-          time: new Date().toLocaleTimeString(),
+          time: new Date().toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          }),
           queryType: QueryType.MENU_QUERY,
         },
       });
@@ -88,10 +98,17 @@ export const DunkinOrderApp: React.FC = () => {
           id: Date.now() + 1,
           text: "Sorry, I couldn't analyze the image.",
           isBot: true,
-          time: new Date().toLocaleTimeString(),
+          time: new Date().toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          }),
           queryType: QueryType.GENERAL,
         },
       });
+    }
+    finally {
+      setIsImageAnalyzing(false);
     }
   };
 
@@ -261,7 +278,11 @@ export const DunkinOrderApp: React.FC = () => {
       id: Date.now(),
       text: input.trim(),
       isBot: false,
-      time: new Date().toLocaleTimeString(),
+      time: new Date().toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      }),
       queryType, // Include query type in message
     };
 
@@ -308,7 +329,11 @@ export const DunkinOrderApp: React.FC = () => {
           id: Date.now() + 1,
           text: apiResponseText,
           isBot: true,
-          time: new Date().toLocaleTimeString(),
+          time: new Date().toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        }),
           queryType, // Keep the same query type for the response
         };
 
@@ -329,7 +354,11 @@ export const DunkinOrderApp: React.FC = () => {
           id: Date.now() + 1,
           text: "Sorry, I had trouble understanding your question. Please try again.",
           isBot: true,
-          time: new Date().toLocaleTimeString(),
+          time: new Date().toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          }),
           queryType: QueryType.GENERAL,
         },
       });
@@ -370,6 +399,7 @@ export const DunkinOrderApp: React.FC = () => {
           onSubmit={handleSubmit}
           placeholder={getInputPlaceholder()}
           onImageUpload={handleImageUpload}
+          isImageAnalyzing={isImageAnalyzing}
           isLoading={state.isLoading}
           queryType={state.currentQueryType}
         />
