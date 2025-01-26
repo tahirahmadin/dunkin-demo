@@ -1,4 +1,4 @@
-# Dunkin' Donuts AI Chatbot Demo
+# Dunkin' Donuts Demo Chatbot
 
 Welcome to the **Dunkin' Donuts Demo Chatbot**! This project showcases an AI-powered chatbot designed to assist users with menu navigation and ordering. The chatbot leverages OpenAI APIs to provide dynamic, contextual responses based on the Dunkin' Donuts menu.
 
@@ -11,21 +11,21 @@ Welcome to the **Dunkin' Donuts Demo Chatbot**! This project showcases an AI-pow
 
 ## Screenshots
 
-### 1. **Chatbot Welcome Screen**
+### Chatbot Screenshots
 
-![Chatbot Welcome Screen](1.png)
+#### Welcome & Menu Display
 
-### 2. **Menu Display**
+<p align="center">
+  <img src="1.png" alt="Chatbot Welcome Screen" width="45%">
+  <img src="2.png" alt="Menu Display" width="45%">
+</p>
 
-![Menu Display](2.png)
+#### Order Confirmation & AI Suggestions
 
-### 3. **Order Confirmation**
-
-![Order Confirmation](3.png)
-
-### 4. **AI Suggestions**
-
-![AI Suggestions](4.png)
+<p align="center">
+  <img src="3.png" alt="Order Confirmation" width="45%">
+  <img src="4.png" alt="AI Suggestions" width="45%">
+</p>
 
 ## Tech Stack
 
