@@ -114,6 +114,8 @@ export const DunkinOrderApp: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log(input);
+    console.log(e.target);
     e.preventDefault();
     if (!input.trim()) return;
 
@@ -297,7 +299,7 @@ export const DunkinOrderApp: React.FC = () => {
       try {
         const prompt = `Here is the menu data: ${JSON.stringify(
           menuItems
-        )}. Based on this, answer the user's query: ${input}. Return the response in the format { "text": "", "items": [{ id: number, name: string, price: string }],"conclusion":"" }, where "text" is a creative/cleaver/funny information related to user query - in around 25 words and "items" is an array of matching menu items with only id, name, and price and "conclusion" is final short creative remark. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations or format.`;
+        )}. Based on this, answer the user's query: ${input}. Return the response in the format strictly - { "text": "", "items": [{ "id": number, "name": string, "price": string }],"conclusion":"" }, where "text" is a creative/cleaver/funny information related to user query - in around 25 words and "items" is an array of matching menu items with only id, name, and price and "conclusion" is final short creative remark. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations or format type in response.`;
         // Call the DeepSeek API with the correct request format
         const response = await axios.post(
           OPENAI_API_URL,
