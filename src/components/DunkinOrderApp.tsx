@@ -28,7 +28,9 @@ export const DunkinOrderApp: React.FC = () => {
 
   // Replace with your DeepSeek API endpoint and API key
   const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"; // Example endpoint
+  const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"; // Example endpoint
   const API_KEY = import.meta.env.VITE_PUBLIC_DEEPSEEK_KEY; // Replace with your actual API key
+  const OPENAI_KEY = import.meta.env.VITE_PUBLIC_OPENAI_API_KEY; // Replace with your actual API key
 
   const imageService = new ImageService();
 
@@ -58,19 +60,19 @@ export const DunkinOrderApp: React.FC = () => {
 
       const prompt = `Here is the menu data: ${JSON.stringify(
         menuItems
-      )}. Based on this image description: "${imageDescription}". Return the response in the format { "text": "", "items": [{ id: number, name: string, price: string }] }, where "text" is funny and clever summary and "items" is an array of matching menu items with only id, name, and price. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations or name of format.`;
+      )}. Based on this image description: "${imageDescription}". Return the response in the format { text: "", items: [{ id: number, name: string, price: string }],conclusion:"" }, where "text" is a funny/creative/clever information related to user query and "items" is an array of matching menu items with only id, name, and price and "conclusion" is final short creative remark.. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations.`;
 
       const response = await axios.post(
-        DEEPSEEK_API_URL,
+        OPENAI_API_URL,
         {
-          model: "deepseek-chat",
+          model: "gpt-4o-mini",
           messages: [{ role: "user", content: prompt }],
           max_tokens: 2000,
         },
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${API_KEY}`,
+            Authorization: `Bearer ${OPENAI_KEY}`,
           },
         }
       );
@@ -106,8 +108,7 @@ export const DunkinOrderApp: React.FC = () => {
           queryType: QueryType.GENERAL,
         },
       });
-    }
-    finally {
+    } finally {
       setIsImageAnalyzing(false);
     }
   };
@@ -296,12 +297,12 @@ export const DunkinOrderApp: React.FC = () => {
       try {
         const prompt = `Here is the menu data: ${JSON.stringify(
           menuItems
-        )}. Based on this, answer the user's query: ${input}. Return the response in the format { text: "", items: [{ id: number, name: string, price: string }] }, where "text" is a summary and "items" is an array of matching menu items with only id, name, and price. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations.`;
+        )}. Based on this, answer the user's query: ${input}. Return the response in the format { text: "", items: [{ id: number, name: string, price: string }],conclusion:"" }, where "text" is a creative information related to user query and "items" is an array of matching menu items with only id, name, and price and "conclusion" is final short creative remark. Include a maximum of 6 items and minimum 2 items - but be flexible with items count based on requirements. Do not include any additional text or explanations.`;
         // Call the DeepSeek API with the correct request format
         const response = await axios.post(
-          DEEPSEEK_API_URL,
+          OPENAI_API_URL,
           {
-            model: "deepseek-chat", // Specify the model you're using
+            model: "gpt-4o", // Specify the model you're using
             messages: [
               {
                 role: "user",
@@ -313,7 +314,7 @@ export const DunkinOrderApp: React.FC = () => {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${API_KEY}`,
+              Authorization: `Bearer ${OPENAI_KEY}`,
             },
           }
         );
@@ -330,10 +331,10 @@ export const DunkinOrderApp: React.FC = () => {
           text: apiResponseText,
           isBot: true,
           time: new Date().toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "numeric",
-          hour12: true,
-        }),
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          }),
           queryType, // Keep the same query type for the response
         };
 

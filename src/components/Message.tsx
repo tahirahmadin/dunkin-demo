@@ -48,6 +48,7 @@ export const Message: React.FC<MessageProps> = ({ message, onRetry }) => {
                 />
               </div>
             )}
+            <p className="text-gray-600">{message.structuredText.conclusion}</p>
           </div>
         ) : (
           <div className={message.isBot ? "text-gray-800" : "text-white"}>
